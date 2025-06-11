@@ -6,6 +6,7 @@ from .mandelbrot import compute_mandelbrot_set
 from .julia import compute_julia_set
 
 def run_visualizer() -> None:
+<<<<<<< HEAD
     """
     Runs an interactive visualization of Mandelbrot and Julia fractals.
 
@@ -17,6 +18,8 @@ def run_visualizer() -> None:
 
     This visualization uses matplotlib and its interactive widgets.
     """
+=======
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
     width, height = 800, 800
     max_iter_default = 100
     c_re, c_im = -0.4, 0.6
@@ -31,10 +34,13 @@ def run_visualizer() -> None:
     press = [None]
 
     def draw() -> None:
+<<<<<<< HEAD
         """
         Renders the fractal based on current view, iteration count,
         and mode (Mandelbrot or Julia).
         """
+=======
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
         ax.clear()
         xmin, xmax = window[0]
         ymin, ymax = window[1]
@@ -50,7 +56,10 @@ def run_visualizer() -> None:
         plt.draw()
 
     def on_press(event):
+<<<<<<< HEAD
         """Handles mouse press to start zoom rectangle selection."""
+=======
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
         if event.inaxes != ax:
             return
         press[0] = (event.xdata, event.ydata)
@@ -60,7 +69,10 @@ def run_visualizer() -> None:
         plt.draw()
 
     def on_motion(event):
+<<<<<<< HEAD
         """Handles mouse movement to resize zoom rectangle."""
+=======
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
         if press[0] is None or selection_rect[0] is None or event.inaxes != ax:
             return
         x0, y0 = press[0]
@@ -70,7 +82,10 @@ def run_visualizer() -> None:
         plt.draw()
 
     def on_release(event):
+<<<<<<< HEAD
         """Handles mouse release to finalize zoom area."""
+=======
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
         if press[0] is None or event.inaxes != ax:
             return
         x0, y0 = press[0]
@@ -113,4 +128,8 @@ def run_visualizer() -> None:
     reset_button.on_clicked(lambda event: (window.__setitem__(0, default_window[0][:]),
                                            window.__setitem__(1, default_window[1][:]), draw()))
     draw()
+<<<<<<< HEAD
     plt.show()
+=======
+    plt.show()
+>>>>>>> 5b19da3a35a2ebaee1badc58f5c0986c681f2009
